@@ -7,17 +7,12 @@ import (
 )
 
 func main() {
-	request := pullword.NewRequest("马化腾是李彦宏最大的威胁", false, false)
+	request := pullword.NewRequest("感谢pullword的中文分词服务", false, true)
 	resM, err := request.GetM()
-	resS, err := request.GetS()
 	if err != nil {
 		log.Fatal(err)
 	}
 	for k, v := range resM {
 		fmt.Println(k, v)
-	}
-	fmt.Println()
-	for _, v := range resS {
-		fmt.Println(v)
 	}
 }
